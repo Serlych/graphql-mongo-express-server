@@ -1,4 +1,5 @@
 import User from '../../../models/User'
+import uuidv4 from 'uuid'
 
 export default {
   Query: {
@@ -18,8 +19,8 @@ export default {
     }
   },
   Mutation: {
-    addUser: (root, { id, name, email }) => {
-      const newUser = new User({ id, name, email })
+    addUser: (root, { name, email }) => {
+      const newUser = new User({ id: uuidv4(), name, email })
       
       return new Promise ((resolve, reject) => {
         newUser.save((err, res) => {

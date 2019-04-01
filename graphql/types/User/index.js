@@ -12,7 +12,7 @@ export default
   }
   
   type Mutation {
-    addUser (id: String!, name: String!, email: String!): User
+    addUser (id: String, name: String!, email: String!): User
     editUser (id: String, name: String, email: String): User
     deleteUser (id: String, name: String, email: String): User
   }
